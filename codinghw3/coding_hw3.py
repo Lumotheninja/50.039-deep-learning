@@ -100,14 +100,20 @@ def bigger_size():
                                  transform = transforms.Compose([transforms.Resize(size=330), transforms.CenterCrop(330), transforms.ToTensor()]))
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')
-model=resnet18
-model.eval()
-correct_pred = 0
-with torch.no_grad():
-    for idx, (data,target) in enumerate(ImagenetLoader):
-        data, target = data.to(device), target.to(device)
-        output = model(data)
-        pred = output.argmax(dim=1)
-        correct_pred += torch.sum(pred==target).item()
-print (correct_pred/2500)
+	model=resnet18
+	model.eval()
+	correct_pred = 0
+	with torch.no_grad():
+	    for idx, (data,target) in enumerate(ImagenetLoader):
+	        data, target = data.to(device), target.to(device)
+	        output = model(data)
+	        pred = output.argmax(dim=1)
+	        correct_pred += torch.sum(pred==target).item()
+	print ("330x330 resnet", correct_pred/2500)
+
+if __name__ == '__main__':
+    without_norm()
+    with_norm()
+    five_crop()
+    bigger_size()
 
