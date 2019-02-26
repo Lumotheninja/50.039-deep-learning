@@ -36,11 +36,11 @@ class ImagenetTrainingDataset(torch.utils.data.Dataset):
 resnet18 = models.resnet18(pretrained=True)
 
 def without_norm():
-   dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
+    print ("Testing without norm")
+    dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
                                  img_dir = 'imagenet2500/imagespart',
                                  synset = 'synset_words.txt',
                                  transform = transforms.Compose([transforms.Resize(size=224), transforms.CenterCrop(224), transforms.ToTensor()]))
-
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')
     model=resnet18
@@ -55,11 +55,11 @@ def without_norm():
     print ("Centercrop resnet without normalization", correct_pred/2500)
 
 def with_norm():
-   dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
+    print ("Testing with norm")
+    dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
                                  img_dir = 'imagenet2500/imagespart',
                                  synset = 'synset_words.txt',
                                  transform = transforms.Compose([transforms.Resize(size=224), transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]))
-
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')
     model=resnet18
@@ -74,6 +74,7 @@ def with_norm():
     print ("Centercrop resnet with normalization", correct_pred/2500)
 
 def five_crop():
+    print ("Testing Fivecrop")
     dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
                                  img_dir = 'imagenet2500/imagespart',
                                  synset = 'synset_words.txt',
@@ -88,32 +89,33 @@ def five_crop():
             data, target = data.to(device), target.to(device)
             bs, ncrops, c, h, w = data.size()
             output = model(data.view(-1, c, h, w))
-            target = target.view(-1, 1).repeat(1,5).view(1,-1).squeeze()
-            pred = output.argmax(dim=1)
+            result_avg = output.view(bs, ncrops, -1).mean(1)
+            pred = result_avg.argmax(dim=1)
             correct_pred += torch.sum(pred==target).item()
-    print ("Fivecrop resnet", correct_pred/12500)
+    print ("Fivecrop resnet", correct_pred/2500)
 
 def bigger_size():
+    print ("Testing bigger size")
     dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
                                  img_dir = 'imagenet2500/imagespart',
                                  synset = 'synset_words.txt',
                                  transform = transforms.Compose([transforms.Resize(size=330), transforms.CenterCrop(330), transforms.ToTensor()]))
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')
-	model=resnet18
-	model.eval()
-	correct_pred = 0
-	with torch.no_grad():
-	    for idx, (data,target) in enumerate(ImagenetLoader):
-	        data, target = data.to(device), target.to(device)
-	        output = model(data)
-	        pred = output.argmax(dim=1)
-	        correct_pred += torch.sum(pred==target).item()
-	print ("330x330 resnet", correct_pred/2500)
+    model=resnet18
+    model.eval()
+    correct_pred = 0
+    with torch.no_grad():
+        for idx, (data,target) in enumerate(ImagenetLoader):
+            data, target = data.to(device), target.to(device)
+            output = model(data)
+            pred = output.argmax(dim=1)
+            correct_pred += torch.sum(pred==target).item()
+    print ("330x330 resnet", correct_pred/2500)
 
 if __name__ == '__main__':
-    without_norm()
-    with_norm()
-    five_crop()
+    # without_norm()
+    # with_norm()
+    # five_crop()
     bigger_size()
 
