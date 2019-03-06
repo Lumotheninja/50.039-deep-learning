@@ -1,4 +1,5 @@
-processed
-raw
-model_state.txt
 .ipynb_checkpoints
+codinghw3/imagenet2500
+codinghw4/flowersstuff
+/simpledata
+project/static
