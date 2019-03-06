@@ -4,11 +4,11 @@ Resnet18 without normalization: 0.4456
 Resnet18 with normalization: 0.6696
 
 Problem 2:
-Resnet 18 with fivecrop, without normalization: 0.38368
-We cannot use tencrop for photos that are not horizontally symmetrical
+Resnet 18 with fivecrop, with normalization: 0.7292
+We cannot use tencrop for photos that have words read from left to right, for example street signs and car plate numbers
 
 Problem 3:
 Here we use the latest master version of torchvision, which already implements adaptive average pool
 To download it use `pip install git+https://github.com/pytorch/vision.git`
-Resnet with 330 image:
+Resnet with 330x330 images, with normalization: 0.6984
 
