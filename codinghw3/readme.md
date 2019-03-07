@@ -7,6 +7,6 @@ No training was involved, testing was done with 4 different transforms to see th
 
 Test accuracy with 4 different transforms:  
 1. Without normalization: 0.4456
-2. With normalization: 0.6696 (This corresponded to top 1 error of [30.24%](https://pytorch.org/docs/stable/torchvision/models.html))
+2. With normalization: 0.6696
 3. FiveCrop: 0.7292
 4. Bigger resize: 0.6984

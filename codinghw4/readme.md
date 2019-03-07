@@ -11,25 +11,16 @@ Test accuracy with 4 different transforms:
 3. Resnet with pretrained weights, but optmizing only last 2 layers 0.9609
 
 # Model1 Graphs:
-1. training loss vs epoch
-![training loss vs epoch](./results/model1_training_loss.png)
-2. validation loss vs epoch
-![validation loss vs epoch](./results/model1_val_loss.png)
-3. validation acuracy vs epoch
-![validation accuracy vs epoch](./results/model1.png)
+1. ![training loss vs epoch](./results/model1_training_loss.png)
+2. ![validation loss vs epoch](./results/model1_val_loss.png)
+3. ![validation accuracy vs epoch](./results/model1.png)
 
 # Model1 Graphs:
-1. training loss vs epoch
-![training loss vs epoch](./results/model2_training_loss.png)
-2. validation loss vs epoch
-![validation loss vs epoch](./results/model2_val_loss.png)
-3. validation acuracy vs epoch
-![validation accuracy vs epoch](./results/model2.png)
+1. ![training loss vs epoch](./results/model2_training_loss.png)
+2. ![validation loss vs epoch](./results/model2_val_loss.png)
+3. ![validation accuracy vs epoch](./results/model2.png)
 
 # Model3 Graphs:
-1. training loss vs epoch
-![training loss vs epoch](./results/model3_training_loss.png)
-2. validation loss vs epoch
-![validation loss vs epoch](./results/model3_val_loss.png)
-3. validation acuracy vs epoch
-![validation accuracy vs epoch](./results/model3.png)
+1. ![training loss vs epoch](./results/model3_training_loss.png)
+2. ![validation loss vs epoch](./results/model3_val_loss.png)
+3. ![validation accuracy vs epoch](./results/model3.png)
