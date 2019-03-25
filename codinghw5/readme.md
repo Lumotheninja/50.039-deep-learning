@@ -11,11 +11,11 @@ Test accuracy with 3 different transforms:
 The 2 accuracies which are 0.467 are obtained by predicting all class 14 for the name problem, this is due to the padding per batch affecting the hidden state of the LSTM.
 
 # Model1 Graphs:
-1. ![training loss vs epoch](./results/model_1_training_loss.png)
-2. ![test loss vs epoch](./results/model_1_test_loss.png)
-3. ![test accuracy vs epoch](./results/model_1_test_acc.png)
+1. ![training loss vs epoch](./results/model_training_loss.png)
+2. ![test loss vs epoch](./results/model_test_loss.png)
+3. ![test accuracy vs epoch](./results/model_test_acc.png)
 
-# Model1 Graphs:
+# Mode12 Graphs:
 1. ![training loss vs epoch](./results/model_2_training_loss.png)
 2. ![test loss vs epoch](./results/model_2_test_loss.png)
 3. ![test accuracy vs epoch](./results/model_2_test_acc.png)
