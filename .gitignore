@@ -1,6 +1,5 @@
 .ipynb_checkpoints
-codinghw3/imagenet2500
-codinghw3/ILSVRC2012_bbox_val_v3
-codinghw4/flowersstuff
-/simpledata
+*/data
+inclass/simpledata
 project/static
+*.pem

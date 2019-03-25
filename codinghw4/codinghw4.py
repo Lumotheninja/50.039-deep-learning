@@ -114,20 +114,20 @@ def train_val_test(model, loss_fn, device, optimizer, epoch, name):
         txtfile.write("Accuracy is: "+ str(test_accuracy))
 
 if __name__ == '__main__':
-    train_dataset = FlowersDataset('flowersstuff/flowers_data/jpg', 
-                                   'flowersstuff/trainfile.txt', 
+    train_dataset = FlowersDataset('data/flowersstuff/flowers_data/jpg', 
+                                   'data/flowersstuff/trainfile.txt', 
                                    transforms.Compose([transforms.Resize(size=224), 
                                                         transforms.CenterCrop(224), 
                                                         transforms.ToTensor(), 
                                                         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]))
-    val_dataset = FlowersDataset('flowersstuff/flowers_data/jpg', 
-                                   'flowersstuff/valfile.txt', 
+    val_dataset = FlowersDataset('data/flowersstuff/flowers_data/jpg', 
+                                   'data/flowersstuff/valfile.txt', 
                                    transforms.Compose([transforms.Resize(size=224), 
                                                         transforms.CenterCrop(224), 
                                                         transforms.ToTensor(), 
                                                         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]))
-    test_dataset = FlowersDataset('flowersstuff/flowers_data/jpg', 
-                                   'flowersstuff/testfile.txt', 
+    test_dataset = FlowersDataset('data/flowersstuff/flowers_data/jpg', 
+                                   'data/flowersstuff/testfile.txt', 
                                    transforms.Compose([transforms.Resize(size=224), 
                                                         transforms.CenterCrop(224), 
                                                         transforms.ToTensor(), 

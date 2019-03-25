@@ -59,9 +59,9 @@ def evaluate(model, dataloader, device, limit=2500):
 
 def without_norm():
     print ("Testing without norm")
-    dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
-                                 img_dir = 'imagenet2500/imagespart',
-                                 synset = 'synset_words.txt',
+    dataset = ImagenetTrainingDataset(text_dir = 'data/ILSVRC2012_bbox_val_v3/val',
+                                 img_dir = 'data/imagenet2500/imagespart',
+                                 synset = 'data/synset_words.txt',
                                  transform = transforms.Compose([transforms.Resize(size=224), transforms.CenterCrop(224), transforms.ToTensor()]))
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')
@@ -70,9 +70,9 @@ def without_norm():
 
 def with_norm():
     print ("Testing with norm")
-    dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
-                                 img_dir = 'imagenet2500/imagespart',
-                                 synset = 'synset_words.txt',
+    dataset = ImagenetTrainingDataset(text_dir = 'data/ILSVRC2012_bbox_val_v3/val',
+                                 img_dir = 'data/imagenet2500/imagespart',
+                                 synset = 'data/synset_words.txt',
                                  transform = transforms.Compose([transforms.Resize(size=224), transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]))
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')
@@ -81,9 +81,9 @@ def with_norm():
 
 def five_crop():
     print ("Testing Fivecrop")
-    dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
-                                 img_dir = 'imagenet2500/imagespart',
-                                 synset = 'synset_words.txt',
+    dataset = ImagenetTrainingDataset(text_dir = 'data/ILSVRC2012_bbox_val_v3/val',
+                                 img_dir = 'data/imagenet2500/imagespart',
+                                 synset = 'data/synset_words.txt',
                                  transform = transforms.Compose([transforms.Resize(size=280), transforms.FiveCrop(224), transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])), transforms.Lambda(lambda crops: torch.stack([transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])(crop) for crop in crops]))]))
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')
@@ -92,9 +92,9 @@ def five_crop():
 
 def bigger_size():
     print ("Testing bigger size")
-    dataset = ImagenetTrainingDataset(text_dir = 'ILSVRC2012_bbox_val_v3/val',
-                                 img_dir = 'imagenet2500/imagespart',
-                                 synset = 'synset_words.txt',
+    dataset = ImagenetTrainingDataset(text_dir = 'data/ILSVRC2012_bbox_val_v3/val',
+                                 img_dir = 'data/imagenet2500/imagespart',
+                                 synset = 'data/synset_words.txt',
                                  transform = transforms.Compose([transforms.Resize(size=330), transforms.CenterCrop(330), transforms.ToTensor(), transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]))
     ImagenetLoader = torch.utils.data.DataLoader(dataset,batch_size=25, num_workers=1)
     device = torch.device('cpu')

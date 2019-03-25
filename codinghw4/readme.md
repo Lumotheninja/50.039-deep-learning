@@ -5,7 +5,7 @@ Training was done on AWS p2.xlarge ec2 instance, so that we can witness the comp
 To modify the existing resnet18 to predict 102 outputs, we change the final fc layer of the resnet to have an output of 102  
 
 # Results
-Test accuracy with 4 different transforms:  
+Test accuracy with 3 different transforms:  
 1. Resnet18 without pretrained weights: 0.6674
 2. Resnet18 with pretrained weights: 0.9570
 3. Resnet with pretrained weights, but optmizing only last 2 layers 0.9609

@@ -28,7 +28,7 @@ def predict_image_label():
     graph_url = None
     if request.method == 'POST':
         if "url" in request.form:
-            image = "./static/VOCtrainval_11-May-2012/VOCdevkit/VOC2012/JPEGImages/" + request.form['url'] + ".jpg"
+            image = "./static/VOCdevkit/VOC2012/JPEGImages/" + request.form['url'] + ".jpg"
         else:
             image = request.files['image']
         try: 
@@ -44,9 +44,17 @@ def predict_image_label():
 @app.route('/top_images/<class_name>', methods=['GET'])
 def view_top_images(class_name):
     with open('results/comp1_cls_val_' + class_name + '.txt', 'r') as f:
-        top_images = [line.strip('\n').split(' ') for line in f.readlines()]
+        num_lines = 0
+        top_images = []
+        for line in f.readlines():
+            num_lines += 1
+            top_images.append(line.strip('\n').split(' '))
         top_images.sort(key=lambda tup: float(tup[1]))
-    return render_template('top_image.html', class_name=class_name, top_images=top_images[-30:][::-1])
+        top_images.reverse()
+    num_pages = num_lines//20 + 1
+    page = request.args.get('page', 1, type=int)
+    display_images = top_images[(page-1)*20:] if (page == num_pages) else top_images[(page-1)*20:page*20] 
+    return render_template('top_image.html', class_name=class_name, top_images=display_images, num_pages=num_pages, page=page)
 
 def eval_one_image(image, classes, model):
     model.eval()
@@ -60,9 +68,9 @@ def eval_one_image(image, classes, model):
     data = transform(img).unsqueeze(dim=0)
     bs, ncrops, c, h, w = data.size()
     output = model(data.view(-1, c, h, w))
-    output = output.view(bs, ncrops, -1).max(1)[0]
+    output = output.view(bs, ncrops, -1).mean(1)
     sigmoid = torch.sigmoid(output)
-    plt.bar(classes, sigmoid.squeeze().detach().numpy(), label='training loss')
+    plt.bar(classes, sigmoid.squeeze().detach().numpy(), label='sigmoid value')
     plt.xticks(rotation=90)
     plt.legend(loc='upper left')
     plt.tight_layout()
@@ -71,3 +79,6 @@ def eval_one_image(image, classes, model):
     preds = sigmoid > 0.5
     labels = list(np.where(pred==1)[0] for pred in preds)[0]
     return ([classes[label] for label in labels])
+
+if __name__ == "__main__":    
+    app.run(host='0.0.0.0')
