@@ -7,7 +7,7 @@ Learning rate = 0.1
 Optimizer - Stochastic gradient descent only on layer 4 and fc layer, momentum = 0.9, weight decay =1e-4  
 
 # Results:
-![Results](./results/voc_pascal_results.png)
+![Results](./results/voc_pascal_results.png)  
 Accuracy is not a good measure for this problem because there are more pictures without the object then images with the object. Hence the accuracy can easily be made very high for each class, as an easy classifier could just don’t predict any labels for any datapoints and still have a high accuracy. However for average precision, it is true positive over predicted positive so the measure would be more representative of the performance of the neural network. We implemented mAP based on this [Medium article](https://medium.com/@hfdtsinghua/calculate-mean-average-precision-map-for-multi-label-classification-b082679d31be)
 
 # Model Graphs:
