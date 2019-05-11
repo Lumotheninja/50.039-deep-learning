@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 */data
 inclass/simpledata
+inclass/img_align_celeba
 project/static
 *.pem
