@@ -1,0 +1,136 @@
+KIRK: That is a grow you to a will be alive a brain to surpeated and given.
+TRELANE: It's not a man the ship can the see are the gring the Say.
+IRK: And what?
+IRK: The was a mission eighten the primination paintter in the live will meave.
+CCOY: Scott time the chaver to the said the seem and your completed to see ship the zave of the was dame the ship's still to beam a back with it.
+IRK: Spock?
+IRK: Bones, Captain.
+IRK: The long from the Enterprise.
+POCK: Or a contert.
+POCK: I have the must coming the one will the will report the love and yoo.
+Current epoch:  2
+Trained 26367 samples, loss:   1.309518
+Tested 6591 samples, loss:   1.214981
+Accuracy 0.6402777189787402
+IRK: But that have the transporter thank you.
+IRK: I can stay any message.
+NANCY: I was there to make to the shields done.
+ANICE: It is the strange.
+IRK: I do not have been makes.
+SPOCK: Prepare to try to kill by the Enterprise.
+POCK: Captain, I can do it think the may they make what you are not like you to see that of the hours and the try out.
+ARA: What is it the course can me?
+NGINEER: On course, Captain.
+POCK: I wanted a transporter course.
+Current epoch:  3
+Trained 26367 samples, loss:   1.192909
+Tested 6591 samples, loss:   1.153546
+Accuracy 0.6583928978564098
+IRK: What happened?
+IRK: What is it?
+ROWN: I did that a little last of the screen.
+POCK: I have to death some alien the body are in the ship. The shields and a ship and in the man any minutes.
+CCOY: Spock, you have a letter control six hardly feel to the strange of the transporter refunding cause of the cold of here.
+IRK: Where is the place?
+ELGER: I was a logical the search in a some time must have found a problem, and we can be a starship on the communicator careful.
+POCK: Yes, sir.
+POCK: Not a few heading the fear of the ship's speed.
+IRK: They won't lose the strangers the source experience.
+Current epoch:  4
+Trained 26367 samples, loss:   1.137527
+Tested 6591 samples, loss:   1.124693
+Accuracy 0.6672333055790708
+AREK: I want to answer the world.
+ARA: Yes.
+POCK: I would do the party of the source.
+COTT: Aye, sir.
+ULU: I don't work to do that contact in the personnel.
+CCOY: It was here.
+CCOY: They're there were we can be all right.
+MCCOY: Spock.
+ULU: I have moving this in the body with the ship.
+POCK: It is no more talking from the could be a minutes to get me now.
+Current epoch:  5
+Trained 26367 samples, loss:   1.103783
+Tested 6591 samples, loss:   1.107581
+Accuracy 0.6701385927527189
+AREK: The crew who will be taken for the captain can we can stay, Captain. I say that the others on the entry for the ship is a transporter room and well that the higher.
+NEG: Yes, sir.
+COTT : Scott here.
+IRK: What is it?
+IRK: You are here?
+OLT: You're ready.
+OR: You're transported report?
+CCOY: I can be the last everything we're one manoeuvres are to this in the ship in the way of your design and the neck of the stars with one.
+RELANE: I have much and get the wind.
+OMAD: We're a transporter room.
+Current epoch:  6
+Trained 26367 samples, loss:   1.080218
+Tested 6591 samples, loss:   1.096281
+Accuracy 0.6756009855455282
+OMPUTER: We must be seen me and weak.
+CCOY: I wonder you're going to be too all right.
+ELLINI: Oh, yes, sir.
+CCOY: I don't know.
+ATIRA: What is it?
+RELANE: You can't hear you were all right.
+YREE: I don't know.
+LASUS: What is it?
+POCK: Captain.
+AND: Sir?
+Current epoch:  7
+Trained 26367 samples, loss:   1.061149
+Tested 6591 samples, loss:   1.082114
+Accuracy 0.6788345498407896
+IRK: Why?
+IRK: I have a months and what is it?
+IRK: What do you do that do they have the ship?
+IRK: Mister Spock.
+IRK: Are you sure?
+POCK: The energy to thing to save a finest primitive free.
+CCOY: No see the heart thought are not anything to get the ship.
+IRK: You can do it the transmuter of the only good entering the ship is not a woman start.
+KIRK: She could be so having no longer.
+IRK: Yes, I know.
+Current epoch:  8
+Trained 26367 samples, loss:   1.047260
+Tested 6591 samples, loss:   1.075263
+Accuracy 0.6817484841363189
+ULU: Aye, sir.
+POCK: That is found the star that and the trick of a command of it.
+HURA: Captain, I'm afraid the right of the word to the planet captain.
+IRK: Stand by.
+LINT: Yes. Rider will be still were an activate invasion.
+IRK: What about the power?
+IRK: Yes, I know.
+OMA: Agreed.
+HURA: Aye, sir.
+RELANE: It is not a visit.
+Current epoch:  9
+Trained 26367 samples, loss:   1.034714
+Tested 6591 samples, loss:   1.073526
+Accuracy 0.6826485056015733
+POCK: It is a minute.
+KIRK: What happened to your particle?
+IRK: I can say the captain is a trick of here.
+HURA: Yes, sir.
+ALLACE: No. I think we try and committed for a recified. You saw this is no operation of the ship.
+AND: It's a name of the way to the power and the computer to the destroyed it in the automatic control of this one is many of the people of it. I was going to ask you it going to stay. I'm sorry to die. I can't get them to see any time. It may be something!
+KIRK: Bones, what's that?
+IRK: Why?
+CCOY: Yes, yes, Mister Spock. Why don't you do it?
+EELA: And if you want a strangly at the captain to come there?
+Current epoch:  10
+Trained 26367 samples, loss:   1.025388
+Tested 6591 samples, loss:   1.067136
+Accuracy 0.6844011220274426
+IRK: What do you mean, you don't know?
+KIRK: What's the contact?
+IRK: Oh, yes.
+OR: No! No! No! No! No! No! No!
+AND: Yes, sir.
+IRK: The captain time is an order of this specimen.
+POCK: Yes, sir.
+ARA: You are the condition will get this soult.
+POCK: Captain, who are you?
+ONES: You must have the signal in a long time. I am of that you say the Captain.
