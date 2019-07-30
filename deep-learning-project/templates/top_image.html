@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VOCPascal Predictor</title>
+  <script type="text/javascript">
+    function post(path, params) {
+      var form = document.createElement("form");
+      form.setAttribute("method", "post");
+      form.setAttribute("action", path);
+
+      var hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", "url");
+      hiddenField.setAttribute("value", params);
+
+      form.appendChild(hiddenField);
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Top images for {{class_name}}</h1>
+  <a href="/">go back</a>
+  <br/>
+  {% if page > 1 %}
+    <a href="{{request.path}}?page={{page - 1}}">Prev 20 images</a>
+  {% endif %}
+  {% if page < num_pages %}
+    <a href="{{request.path}}?page={{page + 1}}">Next 20 images</a>
+  {% endif %}
+  <br/>
+  {% for url in top_images %}
+    <img src="/static/VOCdevkit/VOC2012/JPEGImages/{{ url[0] }}.jpg" alt="There is no picture" onclick="post('/predict', '{{url[0]}}')" />
+    <p>{{url[1]}}</p>
+  {% endfor %}
+  {% if page > 1 %}
+    <a href="{{request.path}}?page={{page - 1}}">Prev 20 images</a>
+  {% endif %}
+  {% if page < num_pages %}
+    <a href="{{request.path}}?page={{page + 1}}">Next 20 images</a>
+  {% endif %}
+</body>
+</html>

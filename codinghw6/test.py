@@ -118,8 +118,9 @@ n_hidden = 200
 n_layer= 3
 temp = 0.5
 
-device = torch.device('cuda:0')
+device = 'cpu'
+print (train_dataset.getInputSize())
 rnn = RNN(train_dataset.getInputSize(), n_hidden, n_layer, device, start_letters).to(device)
-rnn.load_state_dict(torch.load('test.pt'))
+rnn.load_state_dict(torch.load('test.pt', map_location='cpu'))
 print ('here we go')
 print (rnn.sample(0.5))

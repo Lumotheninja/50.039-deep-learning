@@ -218,7 +218,7 @@ n_layer= 3
 temp = 0.5
 
 device = torch.device('cuda:0')
-print (train_dataset.getInputSize())
+print (train_dataset.getInputSize(), set(start_letters))
 rnn = RNN(train_dataset.getInputSize(), n_hidden, n_layer, device, start_letters).to(device)
 epoch = 10
 loss = nn.CrossEntropyLoss()
